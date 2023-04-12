@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ChatGptIndexController;
+use App\Http\Controllers\ChatGptStoreController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +35,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // id of the chat optional, because with no id we start a new chat otherwise display chat with the id
+    Route::get('/chat/{id?}', ChatGptIndexController::class)->name('chat.show');
+
+    Route::post('/chat/{id?}', ChatGptStoreController::class)->name('chat.store');
 });
 
 require __DIR__.'/auth.php';
