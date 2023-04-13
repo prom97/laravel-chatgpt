@@ -25,7 +25,7 @@ class ChatGptStoreController extends Controller
             'model' => 'gpt-3.5-turbo',
             'messages' => $messages
         ]);
-        $messages[] = ['role' => 'assistan', 'content' => $response->choices[0]->message->content];
+        $messages[] = ['role' => 'assistant', 'content' => $response->choices[0]->message->content];
         // dd($messages);
         $chat = Chat::updateOrCreate([
             'id' => $id,
