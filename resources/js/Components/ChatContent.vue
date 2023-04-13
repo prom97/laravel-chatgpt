@@ -4,7 +4,7 @@ const props = defineProps({
     content: Object
 });
 
-const user = computed(() => props.content?.role === 'user');
+const user = computed(() => props.content?.role === "user");
 </script>
 <template>
     <div class="w-full flex text-center py-6" :class="user ? 'bg-slate-800 font-bold' : 'bg-slate-700'">
