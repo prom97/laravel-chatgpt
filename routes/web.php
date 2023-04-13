@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/chat/{id?}', ChatGptIndexController::class)->name('chat.show');
 
     Route::post('/chat/{id?}', ChatGptStoreController::class)->name('chat.store');
+
+    Route::delete('/chat/{chat}', ChatGptDestroyController::class)->name('chat.destroy');
 });
 
 require __DIR__.'/auth.php';
