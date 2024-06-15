@@ -19,7 +19,7 @@
 - Clone project
 
 ```
-git clone https://github.com/PabloDamianRomero/laravel-chatgpt.git
+git clone https://github.com/prom97/laravel-chatgpt.git
 ```
 
 - Install dependencies from composer.json and package.json (inside the project directory)
